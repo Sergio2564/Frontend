@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $(".mini-img").on("mouseenter", function(){
+                    var nuevaSrc = $(this).attr("src");
+                    $(".img-visor").attr("src", nuevaSrc);
+                });
+            });
+        </script>
+        <style>
+            .mini-img{height:100px; width: auto;}
+            .img-visor{width: 100%; height: auto;}
+        </style> 
+    </head>
+    <body>
+        <img src="https://www.dondeir.com/wp-content/uploads/2021/04/los-simpson-peces-del-infierno-300x300.jpg" class="mini-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFKJfuaUJPP6R9szL9zx8nQ-4Iun_FyN8bltMfdH0cPg&s=10" class="mini-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1N2M9kIq3tiDfMVwMqhdyretaovIHal0BgxwwunPwhg&s=10" class="mini-img">
+
+        <div id="viser">
+            <img src="imagenes/img3.jpg" class="img-visor">
+        </div>
+    </body>
+</html>
+

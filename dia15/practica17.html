@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function promedio(notas){
+                let suma = 0;
+                for (let nota of notas) suma += nota;
+                return suma / notas.length;
+            }
+
+            console.log(promedio([10, 8, 9]));
+        </script>
+    </body>
+</html>

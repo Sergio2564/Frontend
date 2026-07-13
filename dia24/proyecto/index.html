@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStudio PY | Desarrollo Web y Soluciones Digitales en Paraguay</title>
+    <meta name="description"
+        content="Estudio de desarrollo frontend y soluciones digitales a medida en Paraguay. Creamos experiencias web de alto impacto.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fuentes (Opcional, pero recomendado para el look & feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Tipografía base configurada por CSS nativo para convivir con Tailwind v4 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+    <!-- ==========================================
+         HEADER & NAVIGATION
+         ========================================== -->
+    <header id="header"
+        class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#hero" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-1">
+                        <span class="text-blue-600">&lt;</span>DevStudio PY<span class="text-blue-600">/&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation (Visible desde 768px hacia arriba) -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#hero"
+                        class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                    <a href="#servicios"
+                        class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Servicios</a>
+                    <a href="#planes"
+                        class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Planes</a>
+                    <a href="#cotizador"
+                        class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Cotizador</a>
+                    <a href="#contacto"
+                        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Mobile Menu Button (Visible en pantallas < 768px) -->
+                <div class="flex md:hidden">
+                    <button id="menu-btn" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <!-- Icono de Hamburguesa (SVG nativo para evitar dependencias externas) -->
+                        <svg class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu (Oculto por defecto usando 'hidden') -->
+        <nav id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 shadow-inner">
+                <a href="#hero"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors">Inicio</a>
+                <a href="#servicios"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors">Servicios</a>
+                <a href="#planes"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors">Planes</a>
+                <a href="#cotizador"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors">Cotizador</a>
+                <a href="#contacto"
+                    class="block mt-2 text-center px-3 py-2.5 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="grow">
+
+
+        <section id="hero"
+            class="relative bg-gradient-to-b from-slate-50 to-slate-100 overflow-hidden pt-12 pb-20 md:py-32 flex items-center min-h-[calc(100vh-4rem)]">
+            <!-- Elementos decorativos de fondo abstractos -->
+            <div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
+                <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-400 blur-3xl"></div>
+                <div class="absolute bottom-[-10%] right-[-10%] w-[30vw] h-[30vw] rounded-full bg-indigo-400 blur-3xl">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
+
+                    <!-- Columna Izquierda: Texto y Call to Actions -->
+                    <div class="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
+                        <!-- Badge de localización/contexto -->
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                            <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+                            Diseño Web desde Paraguay al Mundo
+                        </span>
+
+                        <h1
+                            class="text-2xl sm:text-3xl md:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Sitios Web Profesionales para <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Negocios
+                                Paraguayos</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                            Impulsá tu empresa hoy con un diseño moderno, rápido y efectivo. Creamos páginas web
+                            optimizadas que convierten visitantes en clientes reales para el mercado nacional.
+                        </p>
+
+                        <!-- Grupo de Botones (Apilados en móvil, inline en escritorio) -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                            <a href="#contacto"
+                                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 transition-all duration-200 group transform hover:-translate-y-0.5">
+                                <svg class="w-5 h-5 opacity-80 group-hover:translate-x-0.5 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                Solicitar Presupuesto
+                            </a>
+                            <a href="#planes"
+                                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:text-slate-900 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5">
+                                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M19 13l-7 7-7-7m14-6l-7 7-7-7"></path>
+                                </svg>
+                                Ver Planes
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Ilustración / Imagen conceptual -->
+                    <div class="relative w-full max-w-lg mx-auto md:max-w-none flex justify-center items-center">
+                        <!-- Contenedor con efecto de profundidad o tarjeta simulada -->
+                        <div
+                            class="relative bg-white p-5 sm:p-4 rounded-2xl shadow-2xl border border-slate-100 w-full aspect-video md:aspect-square lg:aspect-video flex items-center justify-center overflow-hidden group">
+                            <!-- Patrón sutil para emular un mockup de navegador/pantalla -->
+                            <div
+                                class="absolute top-0 left-0 right-0 h-8 bg-slate-100 border-b border-slate-200/60 px-4 flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                            </div>
+
+                            <!-- Placeholder de ilustración moderna (Gráficos abstractos de UI con CSS) -->
+                            <div class="w-full h-full pt-8 px-4 flex items-center justify-center">
+                                <div class="text-center space-y-4">
+                                    <div
+                                        class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto text-blue-600 text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
+                                        &lt;/&gt;
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="h-3 w-32 bg-slate-200 rounded-full mx-auto"></div>
+                                        <div class="h-2 w-48 bg-slate-100 rounded-full mx-auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SERVICIOS
+             ========================================== -->
+        <section id="servicios" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Encabezado de Sección -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs font-bold tracking-wider text-blue-600 uppercase">¿Qué hacemos?</h2>
+                    <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Soluciones digitales diseñadas para crecer
+                    </p>
+                    <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Grilla de Servicios (1 col en móvil, 2 en tablets, 3 en escritorio) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Tarjeta 1: Landing Pages -->
+                    <div
+                        class="group bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <!-- Icono: Cohete / Conversión -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Landing Pages</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Páginas de un solo objetivo optimizadas para
+                            convertir visitas en ventas directas.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Sitios Corporativos -->
+                    <div
+                        class="group bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <!-- Icono: Maletín / Empresa -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sitios Corporativos</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Presencia institucional elegante, robusta y
+                            confiable para posicionar tu marca en Paraguay.</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Tiendas Online -->
+                    <div
+                        class="group bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <!-- Icono: Carrito / E-commerce -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Tiendas Online</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">E-commerce autoadministrables con carritos
+                            fluidos y pasarelas de pago locales integradas.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Mantenimiento y Soporte -->
+                    <div
+                        class="group bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <!-- Icono: Soporte / Soporte Técnico -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Mantenimiento y Soporte</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Actualizaciones, copias de seguridad
+                            periódicas y optimización técnica para que nunca te detengas.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PLANES / PRECIOS
+             ========================================== -->
+        <section id="planes" class="py-20 bg-slate-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Encabezado de Sección -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs font-bold tracking-wider text-blue-600 uppercase">Precios Transparentes</h2>
+                    <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Planes a la medida de tu negocio
+                    </p>
+                    <p class="text-slate-500 text-sm">Inversión fija, clara y sin costos sorpresa escondidos.</p>
+                </div>
+
+                <!-- Contenedor de las Tarjetas de Precios -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 items-center max-w-6xl mx-auto">
+
+                    <!-- Tarjeta 1: Landing -->
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full transition-all duration-300 hover:shadow-md">
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Landing</h3>
+                            <div class="flex items-baseline text-slate-900 my-4">
+                                <span class="text-2xl font-semibold tracking-tight">₲</span>
+                                <span class="text-4xl font-extrabold tracking-tight">490.000</span>
+                                <span class="ml-1 text-sm font-semibold text-slate-500">/pago único</span>
+                            </div>
+                            <p class="text-xs text-slate-500 border-b border-slate-100 pb-4 mb-6">Ideal para campañas de
+                                venta rápidas y lanzamientos.</p>
+
+                            <!-- Características -->
+                            <ul class="space-y-3.5 text-sm text-slate-600 mb-8">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>8 horas</strong> de desarrollo dedicado</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Hosting SSD de <strong>500MB</strong></span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Diseño 100% responsivo (Móvil)</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Formulario de contacto básico</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto"
+                            class="block w-full text-center px-4 py-3 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-200">
+                            Elegir este plan
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 2: Corporativo (DESTACADO) -->
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-blue-600 shadow-xl lg:scale-105 flex flex-col justify-between h-full relative z-10">
+                        <!-- Badge Destacado -->
+                        <span
+                            class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white tracking-wide uppercase">
+                            Más elegido
+                        </span>
+
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Corporativo</h3>
+                            <div class="flex items-baseline text-slate-900 my-4">
+                                <span class="text-2xl font-semibold tracking-tight">₲</span>
+                                <span class="text-4xl font-extrabold tracking-tight">1.240.000</span>
+                                <span class="ml-1 text-sm font-semibold text-slate-500">/pago único</span>
+                            </div>
+                            <p class="text-xs text-slate-500 border-b border-slate-100 pb-4 mb-6">Perfecto para pymes
+                                que buscan una presencia digital sólida.</p>
+
+                            <!-- Características -->
+                            <ul class="space-y-3.5 text-sm text-slate-600 mb-8">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>20 horas</strong> de desarrollo dedicado</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Hosting SSD de <strong>2000MB</strong></span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Hasta 5 secciones internas</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Correos corporativos profesionales</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Optimización SEO inicial</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto"
+                            class="block w-full text-center px-4 py-3.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md shadow-blue-600/10 transition-colors duration-200">
+                            Elegir este plan
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 3: Avanzado -->
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full transition-all duration-300 hover:shadow-md">
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Avanzado</h3>
+                            <div class="flex items-baseline text-slate-900 my-4">
+                                <span class="text-2xl font-semibold tracking-tight">₲</span>
+                                <span class="text-4xl font-extrabold tracking-tight">2.480.000</span>
+                                <span class="ml-1 text-sm font-semibold text-slate-500">/pago único</span>
+                            </div>
+                            <p class="text-xs text-slate-500 border-b border-slate-100 pb-4 mb-6">Para proyectos
+                                complejos, e-commerce o plataformas Web.</p>
+
+                            <!-- Características -->
+                            <ul class="space-y-3.5 text-sm text-slate-600 mb-8">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>40 horas</strong> de desarrollo dedicado</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Servidor Dedicado <strong>VPS Linux</strong></span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Integración de Pasarela de Pagos</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Panel autoadministrable completo</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto"
+                            class="block w-full text-center px-4 py-3 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-200">
+                            Elegir este plan
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             COTIZADOR INTERACTIVO
+             ========================================== -->
+        <section id="cotizador" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Encabezado de Sección -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs font-bold tracking-wider text-blue-600 uppercase">Presupuesto al Instante</h2>
+                    <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Cotizá tu proyecto a medida
+                    </p>
+                    <p class="text-slate-500 text-sm">Seleccioná los componentes que necesitas y obtené un estimado al
+                        instante.</p>
+                </div>
+
+                <!-- Formulario del Cotizador en Dos Columnas -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+
+                    <!-- Columna Izquierda: Opciones (Ocupa 2 columnas en pantallas grandes) -->
+                    <form id="form-cotizador" class="lg:col-span-2 space-y-8">
+
+                        <!-- Grupo 1: Plan Base (Radios) -->
+                        <div class="bg-slate-50 p-6 sm:p-6 sm:p-8 rounded-2xl border border-slate-200/60 space-y-4">
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <span
+                                    class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-semibold">1</span>
+                                Seleccioná el Plan Base
+                            </h3>
+                            <p class="text-xs text-slate-500 mb-4">Elegí la estructura principal sobre la cual
+                                trabajaremos.</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <!-- Radio Landing -->
+                                <label
+                                    class="relative flex flex-col p-5 sm:p-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-500 transition-colors select-none dynamic-radio">
+                                    <input type="radio" name="plan-base" value="landing" data-precio="490000"
+                                        class="sr-only peer" checked>
+                                    <span class="text-sm font-bold text-slate-900">Landing</span>
+                                    <span class="text-xs text-slate-500 mt-1">₲ 490.000</span>
+                                    <span
+                                        class="absolute inset-0 border-2 border-transparent peer-checked:border-blue-600 rounded-xl pointer-events-none"></span>
+                                </label>
+
+                                <!-- Radio Corporativo -->
+                                <label
+                                    class="relative flex flex-col p-5 sm:p-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-500 transition-colors select-none dynamic-radio">
+                                    <input type="radio" name="plan-base" value="corporativo" data-precio="1240000"
+                                        class="sr-only peer">
+                                    <span class="text-sm font-bold text-slate-900">Corporativo</span>
+                                    <span class="text-xs text-slate-500 mt-1">₲ 1.240.000</span>
+                                    <span
+                                        class="absolute inset-0 border-2 border-transparent peer-checked:border-blue-600 rounded-xl pointer-events-none"></span>
+                                </label>
+
+                                <!-- Radio Avanzado -->
+                                <label
+                                    class="relative flex flex-col p-5 sm:p-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-500 transition-colors select-none dynamic-radio">
+                                    <input type="radio" name="plan-base" value="avanzado" data-precio="2480000"
+                                        class="sr-only peer">
+                                    <span class="text-sm font-bold text-slate-900">Avanzado</span>
+                                    <span class="text-xs text-slate-500 mt-1">₲ 2.480.000</span>
+                                    <span
+                                        class="absolute inset-0 border-2 border-transparent peer-checked:border-blue-600 rounded-xl pointer-events-none"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Grupo 2: Características Extras (Checkboxes) -->
+                        <div class="bg-slate-50 p-6 sm:p-6 sm:p-8 rounded-2xl border border-slate-200/60 space-y-4">
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <span
+                                    class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-semibold">2</span>
+                                Añadí Módulos Extras
+                            </h3>
+                            <p class="text-xs text-slate-500 mb-4">Personalizá tu ecosistema web agregando funciones
+                                específicas.</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <!-- Contacto Avanzado -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="50000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Contacto Avanzado</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 50.000</span>
+                                </label>
+
+                                <!-- WhatsApp -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="80000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Botón de WhatsApp</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 80.000</span>
+                                </label>
+
+                                <!-- SEO -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="150000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">SEO Avanzado</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 150.000</span>
+                                </label>
+
+                                <!-- Dominio -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="70000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Dominio (.com.py / .com)</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 70.000</span>
+                                </label>
+
+                                <!-- Panel Admin -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="300000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Panel Admin
+                                            Autoadministrable</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 300.000</span>
+                                </label>
+
+                                <!-- SSL -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="950000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Certificado SSL
+                                            Profesional</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 950.000</span>
+                                </label>
+
+                                <!-- Mantenimiento -->
+                                <label
+                                    class="flex items-center justify-between p-5 sm:p-4 sm:p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 select-none">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" data-precio="100000"
+                                            class="w-5 h-5 sm:w-4 sm:h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                                        <span class="text-sm font-medium text-slate-700">Mantenimiento Mensual</span>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-500">+₲ 100.000</span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Columna Derecha: Panel de Resultados (Fijo en scroll para escritorio) -->
+                    <div id="total-cotizacion"
+                        class="lg:sticky lg:top-24 bg-slate-900 text-white p-6 sm:p-6 sm:p-8 rounded-2xl shadow-xl space-y-6 border border-slate-800">
+                        <div>
+                            <h4 class="text-base sm:text-lg font-bold tracking-tight">Resumen del Proyecto</h4>
+                            <p class="text-xs text-slate-400 mt-1">Presupuesto estimado basado en tus selecciones
+                                actuales.</p>
+                        </div>
+
+                        <!-- Separador -->
+                        <div class="border-t border-slate-800 my-4"></div>
+
+                        <!-- Output de Precio -->
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total
+                                Estimado</span>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-black text-blue-400 tracking-tight">
+                                <span>₲ </span><span id="render-total">490.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Info extra y CTA final -->
+                        <div
+                            class="bg-slate-800/50 p-5 sm:p-4 rounded-xl border border-slate-800 text-xs text-slate-300 leading-relaxed">
+                            💡 Los precios reflejados son una aproximación base para el mercado paraguayo. Sujetos a
+                            cambios según requerimientos específicos finales.
+                        </div>
+
+                        <a href="#contacto"
+                            class="block w-full text-center px-4 py-3.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition-all duration-200">
+                            Enviar esta cotización
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- FORMULARIO SECTION                         -->
+        <!-- ========================================== -->
+        <section id="formulario" class="py-16 bg-white">
+            <div class="max-w-2xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Solicitá tu Presupuesto</h2>
+                    <p class="mt-2 text-base sm:text-lg text-gray-600">Completá tus datos y nos pondremos en contacto contigo a la
+                        brevedad.</p>
+                </div>
+
+                <!-- Alerta de éxito oculta por defecto -->
+                <div id="form-success"
+                    class="hidden mb-6 p-5 sm:p-5 sm:p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-sm font-medium">
+                    ¡Muchas gracias! Tu solicitud ha sido enviada con éxito. Nos comunicaremos contigo pronto.
+                </div>
+
+                <form id="presupuesto-form" novalidate class="space-y-6">
+                    <!-- Nombre Completo -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-semibold text-gray-900 mb-2">Nombre Completo
+                            *</label>
+                        <input type="text" id="nombre" name="nombre" required
+                            class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-xs focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none transition-all">
+                        <span id="error-nombre" class="hidden mt-1.5 text-xs text-red-600 font-medium">Por favor,
+                            ingresá tu nombre completo.</span>
+                    </div>
+
+                    <!-- Grid de Correo y Teléfono -->
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <!-- Correo Electrónico -->
+                        <div>
+                            <label for="correo" class="block text-sm font-semibold text-gray-900 mb-2">Correo
+                                Electrónico *</label>
+                            <input type="email" id="correo" name="correo" required
+                                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-xs focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none transition-all">
+                            <span id="error-correo" class="hidden mt-1.5 text-xs text-red-600 font-medium">Ingresá un
+                                correo electrónico válido.</span>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div>
+                            <label for="telefono" class="block text-sm font-semibold text-gray-900 mb-2">Teléfono
+                                *</label>
+                            <input type="tel" id="telefono" name="telefono" required
+                                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-xs focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none transition-all">
+                            <span id="error-telefono" class="hidden mt-1.5 text-xs text-red-600 font-medium">Ingresá un
+                                número de teléfono de contacto.</span>
+                        </div>
+                    </div>
+
+                    <!-- Plan de Interés -->
+                    <div>
+                        <label for="plan" class="block text-sm font-semibold text-gray-900 mb-2">Plan de Interés
+                            *</label>
+                        <select id="plan" name="plan" required
+                            class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-xs focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none transition-all">
+                            <option value="" disabled selected>Seleccioná un plan...</option>
+                            <option value="landing">Landing Page / Institucional</option>
+                            <option value="ecommerce">E-commerce / Tienda Online</option>
+                            <option value="sistema">Sistema Web a Medida</option>
+                        </select>
+                        <span id="error-plan" class="hidden mt-1.5 text-xs text-red-600 font-medium">Por favor,
+                            seleccioná un plan de interés.</span>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div>
+                        <label for="mensaje" class="block text-sm font-semibold text-gray-900 mb-2">Mensaje <span
+                                class="text-gray-400 font-normal">(Opcional)</span></label>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-xs focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none transition-all resize-none"></textarea>
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <div>
+                        <button type="submit"
+                            class="w-full rounded-lg bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer transition-colors">
+                            Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER SECTION                             -->
+    <!-- ========================================== -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Grid Principal -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+
+                <!-- Columna 1: Branding y Datos de Contacto -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">DevStudio PY</h3>
+                    <p class="text-sm text-gray-400 mb-6 max-w-sm">
+                        Creamos soluciones web de alto impacto a la medida de tu negocio.
+                    </p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <span class="text-indigo-400 font-semibold">📍</span>
+                            Asunción, Paraguay (Ficticio 123)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-indigo-400 font-semibold">📞</span>
+                            +595 981 123456
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-indigo-400 font-semibold">✉️</span>
+                            contacto@devstudio.com.py
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos (Navegación Interna) -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li>
+                            <a href="#hero" class="hover:text-white transition-colors">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="#planes" class="hover:text-white transition-colors">Planes</a>
+                        </li>
+                        <li>
+                            <a href="#cotizador" class="hover:text-white transition-colors">Cotizador Interactiva</a>
+                        </li>
+                        <li>
+                            <a href="#formulario" class="hover:text-white transition-colors">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes Sociales -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Seguinos</h3>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Conectá con nosotros y enterate de nuestras últimas novedades.
+                    </p>
+                    <div class="flex flex-col space-y-2.5 text-sm">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 hover:text-indigo-400 transition-colors">
+                            <span class="text-xs">▶</span> Facebook
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 hover:text-pink-400 transition-colors">
+                            <span class="text-xs">▶</span> Instagram
+                        </a>
+                        <a href="https://wa.me/595981123456" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                            <span class="text-xs">▶</span> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Línea Divisoria Inferior -->
+            <div class="pt-8 border-t border-gray-800 text-center md:flex md:items-center md:justify-between">
+                <p class="text-xs text-gray-500">
+                    &copy; 2026 DevStudio PY. Todos los derechos reservados.
+                </p>
+                <p class="text-xs text-gray-600 mt-2 md:mt-0">
+                    Diseñado con pasión desde Paraguay.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts de la aplicación -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

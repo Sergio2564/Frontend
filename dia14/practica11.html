@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let secreto = Math.floor(Math.random() * 10) + 1;
+            let intento;
+
+            do{
+                intento = parseInt(prompt("Adivina el número (1-10):"));
+                if(intento > secreto){
+                    alert("Es menor");
+                }else if(intento < secreto){
+                    alert("Es mallor");
+                }else{
+                    alert("Encontraste el numero que era: "+ secreto )
+                }
+
+            }while(intento !== secreto);
+
+            console.log("Correcto");
+        </script>
+    </body>
+</html>

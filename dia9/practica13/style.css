@@ -1,0 +1,21 @@
+
+#clientes{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#clientes th{
+    background-color: #2e5d3a;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+#clientes td{
+    padding: 6px 8px;
+    border-bottom: 1px solid #c8d5b9;
+}
+
+#clientes tr:nth-child(even){
+    background-color: #f2f5ee;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>credito-finanzas</title>
+    
+    <!-- Cargamos React y ReactDOM desde CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+    <!-- Cargamos Babel para que el navegador entienda JSX al vuelo -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Cargamos Tailwind CSS v4 para los estilos -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    
+    <div id="root"></div>
+
+    <!-- Importante: el type debe ser "text/babel" para que funcione el JSX suelto -->
+    <script type="text/babel">
+      function PrecioSolana() {
+        const [precio, setPrecio] = React.useState(null);
+        const [cargando, setCargando] = React.useState(true);
+        const [error, setError] = React.useState(null);
+
+        async function obtenerPrecio() {
+          setCargando(true);
+          setError(null);
+          try {
+            const url = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd";
+            const respuesta = await fetch(url);
+            if (!respuesta.ok) throw new Error("Error en la API");
+            const datos = await respuesta.json();
+            setPrecio(datos.solana.usd);
+          } catch (err) {
+            setError("No se pudo obtener el precio");
+          } finally {
+            setCargando(false);
+          }
+        }
+
+        React.useEffect(() => { obtenerPrecio(); }, []);
+
+        return (
+          <div className="max-w-sm w-full bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-slate-400 font-semibold">Precio Actual</p>
+                <h2 className="text-lg font-bold text-slate-800">Solana (SOL)</h2>
+              </div>
+              <span className="text-xl font-black text-purple-600">SOL</span>
+            </div>
+            <div className="min-h-[3.5rem] flex items-center mb-4">
+              {cargando && <p className="text-slate-400 text-sm">Cargando...</p>}
+              {error && <p className="text-rose-600 text-sm">{error}</p>}
+              {!cargando && !error && precio !== null && (
+                <p className="text-3xl font-bold text-slate-900">
+                  {precio.toLocaleString("en-US", { style: "currency", currency: "USD" })}
+                </p>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={obtenerPrecio}
+              disabled={cargando}
+              className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors cursor-pointer"
+            >
+              {cargando ? "Actualizando..." : "Actualizar precio"}
+            </button>
+          </div>
+        );
+      }
+
+      // Renderizar el componente en el div #root
+      const root = Azad = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<PrecioSolana />);
+    </script>
+  </body>
+</html>

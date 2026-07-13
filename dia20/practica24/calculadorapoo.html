@@ -1,0 +1,31 @@
+<script>
+
+    class Calculadora{
+        #num1; #num2; #resultado;
+
+        constructor(){
+            this.#num1 = 0;
+            this.#num2 = 0;
+            this.#resultado = 0;
+        }
+
+        cargarNumeros(x,y){
+            this.#num1 = x;
+            this.#num2 = y;
+        }
+
+        sumar(){
+            this.#resultado = this.#num1 + this.#num2;
+            return this.#resultado;
+        }
+    }
+
+</script>
+<h1>Calculadora CASIO</h1>
+<script>
+    casio = new Calculadora();
+    casio.cargarNumeros(45,7);
+    document.write("<br>La suma es: " + casio.sumar());
+    casio.cargarNumeros(5,5);
+    document.write("<br>La suma es: " + casio.sumar());
+</script>

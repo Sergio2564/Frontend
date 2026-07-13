@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#ocultar").click(function(){
+                    $("p").hide();
+                });
+
+                $("#ver").click(function(){
+                    $("p").show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <butto id="ocultar">Ocultar</butto>
+        <button id="ver">Ver</button>
+        <h2>Introducción a JQuery</h2>
+        <p>Haz que el título también se oculte al hacer clic en el mismo</p>
+    </body>
+</html>
