@@ -1,0 +1,67 @@
+/* ==========================================================================
+   CONFIGURACIÓN DE MARCA: PALETA DE COLORES Y TIPOGRAFÍA
+   ========================================================================== */
+:root {
+  --color-primary: #059669;       /* Verde Esmeralda (Confianza / Crecimiento) */
+  --color-primary-hover: #047857; /* Verde más oscuro para estados hover */
+  --color-secondary: #0f172a;     /* Pizarra Oscuro (Profesionalismo) */
+  --color-light: #f8fafc;         /* Gris casi blanco para fondos */
+  --color-text-dark: #1e293b;    /* Gris carbón para máxima legibilidad */
+  --color-text-muted: #64748b;   /* Gris medio para textos secundarios */
+  
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Estilos Globales */
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: var(--color-light);
+}
+
+/* Sobrescribir botones de Bootstrap con nuestra paleta */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+.btn-outline-secondary {
+  color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-secondary) !important;
+  color: #fff !important;
+}
+
+/* Tarjetas y Contenedores */
+.card {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 1rem !important;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+}
+
+/* Estilo para los inputs del nuevo Simulador */
+.form-range::-webkit-slider-thumb {
+  background: var(--color-primary) !important;
+}
+.form-range::-moz-range-thumb {
+  background: var(--color-primary) !important;
+}
